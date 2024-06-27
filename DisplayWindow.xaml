@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgPOE"
         mc:Ignorable="d"
-        Title="DisplayWindow" Height="600" Width="800">
+        Title="DisplayWindow" Height="600" Width="800" Background="Cornsilk">
     <Grid>
         <ComboBox x:Name="RecipeComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="160,0,0,0"/>
         <TextBlock Name="RecipeListTextBlock" HorizontalAlignment="Left" Margin="0,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"><Run Text="List of Recipes"/><Run Language="en-za" Text=":"/></TextBlock>

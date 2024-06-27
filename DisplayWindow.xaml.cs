@@ -17,6 +17,7 @@ namespace ProgPOE
 {
     /// <summary>
     /// Interaction logic for DisplayWindow.xaml
+    /// 
     /// </summary>
     /// 
     public partial class DisplayWindow : Window

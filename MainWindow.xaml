@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgPOE"
         mc:Ignorable="d"
-        Title="Recipe Manager" Height="500" Width="800">
+        Title="Recipe Manager" Height="500" Width="800" Background="Cornsilk">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
