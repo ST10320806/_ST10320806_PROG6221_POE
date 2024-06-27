@@ -30,19 +30,19 @@
 
         <!-- Ingredient Name Block and Box -->
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Ingredient Name:" VerticalAlignment="Center" />
-        <TextBox Grid.Row="3" Grid.Column="1" Name="IngredientNameTextBox" Margin="0,0,0,10" />
+        <TextBox Grid.Row="3" Grid.Column="1" Name="INameTextBox" Margin="0,0,0,10" />
 
         <!-- Ingredient Quantity Block and Box -->
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Quantity:" VerticalAlignment="Center" />
-        <TextBox Grid.Row="4" Grid.Column="1" Name="QuantityTextBox" Margin="0,0,0,10" />
+        <TextBox Grid.Row="4" Grid.Column="1" Name="IQuantityTextBox" Margin="0,0,0,10" />
 
         <!-- Unit of Measurement Block and Box -->
         <TextBlock Grid.Row="5" Grid.Column="0" Text="Unit of Measurement:" VerticalAlignment="Center" />
-        <TextBox Grid.Row="5" Grid.Column="1" Name="UnitTextBox" Margin="0,0,0,10" />
+        <TextBox Grid.Row="5" Grid.Column="1" Name="IUnitTextBox" Margin="0,0,0,10" />
 
         <!-- Food Group  Block and ComboBox -->
         <TextBlock Grid.Row="6" Grid.Column="0" Text="Food Group:" VerticalAlignment="Center" />
-        <ComboBox Grid.Row="6" Grid.Column="1" Name="FoodGroupComboBox" Margin="0,0,0,10">
+        <ComboBox Grid.Row="6" Grid.Column="1" Name="IFoodGroupComboBox" Margin="0,0,0,10">
             <ComboBoxItem Content="Vegetables" />
             <ComboBoxItem Content="Fruits" />
             <ComboBoxItem Content="Grains" />
@@ -53,7 +53,7 @@
 
         <!-- Calories Block and Box -->
         <TextBlock Grid.Row="7" Grid.Column="0" Text="Calories:" VerticalAlignment="Center" />
-        <TextBox Grid.Row="7" Grid.Column="1" Name="CaloriesTextBox" Margin="0,0,0,10" />
+        <TextBox Grid.Row="7" Grid.Column="1" Name="ICaloriesTextBox" Margin="0,0,0,10" />
 
         <!-- Save Ingredient Button -->
         <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Content="Save Ingredient" Click="SaveIngredient_Click" Margin="0,10,0,10" Width="150" HorizontalAlignment="Left"/>

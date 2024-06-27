@@ -26,7 +26,7 @@ namespace ProgPOE
             PopulateRecipeComboBox(recipes);
         }
 
-        private void PopulateRecipeComboBox(List<Recipe> recipes)//Populating combobox with recipes from recipe list
+        private void PopulateRecipeComboBox(List<Recipe> recipes)//Populating combobox with recipes from recipe list. Re-worked from code provided by Claude-AI
         {
             //error handling checking if there is a recipe before trying to display
             if (recipes == null || recipes.Count == 0)
@@ -91,7 +91,7 @@ namespace ProgPOE
 
         private void DisplayRecipe(Recipe recipe)//method for displaying the recipe selected in the combobox
         {
-            //code for displaying the recipe in a certain structure
+            //code for displaying the recipe in a certain structure. re-worked from code provided by Claude-AI
             StringBuilder details = new StringBuilder();
             details.AppendLine($"Recipe Name: {recipe.Name}");
             details.AppendLine("Ingredients:");

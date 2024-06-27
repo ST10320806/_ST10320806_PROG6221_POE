@@ -15,12 +15,21 @@ using System.Windows.Shapes;
 
 namespace ProgPOE
 {
-/// <summary>
-/// Jesse Weeder
-/// ST10320806
-/// Module PROG6221
-/// </summary>
-    
+    /// <summary>
+    /// Jesse Weeder
+    /// ST10320806
+    /// Module PROG6221
+    /// </summary>
+    /// <References>
+    /// https://youtu.be/aBh0weP1bmo?si=UD70xOHln9E63grq
+    /// https://www.tutorialspoint.com/wpf/wpf_data_binding.htm
+    /// https://www.codeproject.com/Articles/22927/Multiple-Window-Interface-for-WPF
+    /// https://www.c-sharpcorner.com/UploadFile/mahesh/using-xaml-groupbox-in-wpf/
+    /// https://wpf-tutorial.com/panels/stackpanel/
+    /// https://www.freecodecamp.org/news/filtering-in-csharp-how-to-filter-a-list-with-code-examples/
+    /// https://learn.microsoft.com/en-us/dotnet/desktop/wpf/windows/?view=netdesktop-8.0
+    /// </References>
+
     public partial class MainWindow : Window
     {
 
@@ -64,11 +73,11 @@ namespace ProgPOE
         private void SaveIngredient_Click(object sender, RoutedEventArgs e)//Event handler for the save ingredient button
         {
             //Caoturing values entered into the textboxes
-            string name = IngredientNameTextBox.Text.Trim();
-            string quantity = QuantityTextBox.Text.Trim();
-            string unit = UnitTextBox.Text.Trim();
-            string foodGroup = FoodGroupComboBox.SelectedItem != null ? (FoodGroupComboBox.SelectedItem as ComboBoxItem).Content.ToString() : string.Empty;
-            string caloriesText = CaloriesTextBox.Text.Trim();
+            string name = INameTextBox.Text.Trim();
+            string quantity = IQuantityTextBox.Text.Trim();
+            string unit = IUnitTextBox.Text.Trim();
+            string foodGroup = IFoodGroupComboBox.SelectedItem != null ? (IFoodGroupComboBox.SelectedItem as ComboBoxItem).Content.ToString() : string.Empty;
+            string caloriesText = ICaloriesTextBox.Text.Trim();
 
             //Checking if any textboxes are empty 
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(quantity) || string.IsNullOrWhiteSpace(unit) || string.IsNullOrWhiteSpace(foodGroup) || string.IsNullOrWhiteSpace(caloriesText))
@@ -103,16 +112,16 @@ namespace ProgPOE
             MessageBox.Show($"Ingredient '{name}' has been added!", "Ingredient Saved", MessageBoxButton.OK, MessageBoxImage.Information);
 
             // Clearing the input fields after completion
-            IngredientNameTextBox.Clear();
-            QuantityTextBox.Clear();
-            UnitTextBox.Clear();
-            FoodGroupComboBox.SelectedIndex = -1;
-            CaloriesTextBox.Clear();
+            INameTextBox.Clear();
+            IQuantityTextBox.Clear();
+            IUnitTextBox.Clear();
+            IFoodGroupComboBox.SelectedIndex = -1;
+            ICaloriesTextBox.Clear();
         }
 
        
 
-        private void SaveRecipe_Click(object sender, RoutedEventArgs e)//Event handler for the Save Recipe button
+        private void SaveRecipe_Click(object sender, RoutedEventArgs e)//Event handler for the Save Recipe button. Re-worked from code taken by Claude-AI
         {
 
             string recipeName = RecipeNameTextBox.Text.Trim();//capturing the value in the text box
@@ -142,7 +151,7 @@ namespace ProgPOE
                 recipes = new List<Recipe>();
             }
 
-            // Step 5: Creating and populating a new recipe object
+            //Creating and populating a new recipe object
             Recipe newRecipe = new Recipe
             {
                 Name = recipeName,
@@ -159,10 +168,10 @@ namespace ProgPOE
             RecipeNameTextBox.Clear();
             RecipeStepsTextBox.Clear();
             ingredients.Clear();
-            IngredientNameTextBox.Clear();
-            QuantityTextBox.Clear();
-            UnitTextBox.Clear();
-            FoodGroupComboBox.SelectedIndex = -1;
+            INameTextBox.Clear();
+            IQuantityTextBox.Clear();
+            IUnitTextBox.Clear();
+            IFoodGroupComboBox.SelectedIndex = -1;
             
         }       
         private void DisplayWindow_Click(object sender, RoutedEventArgs e)//Event handler for the display window button
