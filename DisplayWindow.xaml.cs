@@ -14,12 +14,7 @@ using System.Windows.Shapes;
 using static ProgPOE.MainWindow;
 
 namespace ProgPOE
-{
-    /// <summary>
-    /// Interaction logic for DisplayWindow.xaml
-    /// 
-    /// </summary>
-    /// 
+{    
     public partial class DisplayWindow : Window
     {
         private List<Recipe> _recipes;
@@ -31,70 +26,72 @@ namespace ProgPOE
             PopulateRecipeComboBox(recipes);
         }
 
-        private void PopulateRecipeComboBox(List<Recipe> recipes)
+        private void PopulateRecipeComboBox(List<Recipe> recipes)//Populating combobox with recipes from recipe list
         {
+            //error handling checking if there is a recipe before trying to display
             if (recipes == null || recipes.Count == 0)
             {
                 MessageBox.Show("No recipes available to display.", "No Recipes", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
-            // Order the recipes by their name in alphabetical order
+            //Order the recipes by their name in alphabetical order
             var sortedRecipeNames = recipes.Select(r => r.Name).OrderBy(name => name).ToList();
 
-            // Bind the sorted recipe names to the ComboBox
+            //Bind the sorted recipe names to the ComboBox
             RecipeComboBox.ItemsSource = sortedRecipeNames;
         }
 
         private void ApplyFilterButton_Click(object sender, RoutedEventArgs e)
         {
-            // Get filter criteria from TextBoxes and ComboBox
+            //Getting values from the fields
             string filterIngredient = FilterIngredientTextBox.Text.Trim().ToLower();
             string filterFoodGroup = ((ComboBoxItem)FilterFoodGroupComboBox.SelectedItem)?.Content.ToString();
             int.TryParse(FilterMaxCaloriesTextBox.Text.Trim(), out int filterMaxCalories);
 
-            // Apply filters
+            //Applying the filters
             IEnumerable<string> filteredRecipeNames = _recipes.Select(r => r.Name);
 
-            if (!string.IsNullOrWhiteSpace(filterIngredient))
+            if (!string.IsNullOrWhiteSpace(filterIngredient))//Filtering recipes by ingredient name
             {
                 filteredRecipeNames = filteredRecipeNames.Where(r => _recipes.Any(recipe =>
                     recipe.Name == r && recipe.Ingredients.Any(ingredient => ingredient.Name.ToLower().Contains(filterIngredient))));
             }
 
-            if (filterFoodGroup != "All")
+            if (filterFoodGroup != "All")//Filterin recipes by their food group
             {
                 filteredRecipeNames = filteredRecipeNames.Where(r => _recipes.Any(recipe =>
                     recipe.Name == r && recipe.Ingredients.Any(ingredient => ingredient.FoodGroup == filterFoodGroup)));
             }
 
-            if (filterMaxCalories > 0)
+            if (filterMaxCalories > 0)//Filtering recipes by their calories
             {
                 filteredRecipeNames = filteredRecipeNames.Where(r => _recipes.Any(recipe =>
                     recipe.Name == r && recipe.CalculateTotalCalories() <= filterMaxCalories));
             }
 
-            // Update ComboBox with filtered recipes
+            //Updating combobox with the filtered recipes
             RecipeComboBox.ItemsSource = filteredRecipeNames.ToList();
         }
 
-        private void ShowRecipeDetails_Click(object sender, RoutedEventArgs e)
+        private void ShowRecipeDetails_Click(object sender, RoutedEventArgs e)//Event handler for the show recipe details button
         {
-            if (RecipeComboBox.SelectedItem != null)
+            if (RecipeComboBox.SelectedItem != null)//Checking if an item has been selected from the combobox
             {
                 string selectedRecipeName = RecipeComboBox.SelectedItem.ToString();
                 Recipe selectedRecipe = _recipes.FirstOrDefault(r => r.Name == selectedRecipeName);
 
                 if (selectedRecipe != null)
                 {
-                    // Display the details of the selected recipe
+                    //Display the details of the selected recipe
                     DisplayRecipe(selectedRecipe);
                 }
             }
         }
 
-        private void DisplayRecipe(Recipe recipe)
+        private void DisplayRecipe(Recipe recipe)//method for displaying the recipe selected in the combobox
         {
+            //code for displaying the recipe in a certain structure
             StringBuilder details = new StringBuilder();
             details.AppendLine($"Recipe Name: {recipe.Name}");
             details.AppendLine("Ingredients:");

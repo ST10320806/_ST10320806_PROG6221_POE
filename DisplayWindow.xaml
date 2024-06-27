@@ -7,10 +7,19 @@
         mc:Ignorable="d"
         Title="DisplayWindow" Height="600" Width="800" Background="Cornsilk">
     <Grid>
+        <!--Recipe list ComboBox-->
         <ComboBox x:Name="RecipeComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="160,0,0,0"/>
+
+        <!--Recipe list TextBlock-->
         <TextBlock Name="RecipeListTextBlock" HorizontalAlignment="Left" Margin="0,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"><Run Text="List of Recipes"/><Run Language="en-za" Text=":"/></TextBlock>
+
+        <!--Recipe Details Button-->
         <Button Content="Show Recipe Details" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="ShowRecipeDetails_Click" Margin="11,0,0,517"/>
+
+        <!--Recipe Details TetBlock-->
         <TextBlock x:Name="RecipeDetailsTextBlock" Margin="11,96,526,207" TextWrapping="Wrap"/>
+
+        <!--Filter List GroupBox-->
         <GroupBox Header="Filter Recipes" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="458,11,0,0" Width="250">
             <StackPanel>
                 <Label Content="Ingredient: "/>
@@ -28,6 +37,7 @@
                 <Label Content="Max Calories:"/>
                 <TextBox Name="FilterMaxCaloriesTextBox" Margin="0,0,0,5"/>
 
+                <!--Apply Filter Button-->
                 <Button Content="Apply Filter" Click="ApplyFilterButton_Click" Margin="0,5,0,0"/>
             </StackPanel>
             </GroupBox>

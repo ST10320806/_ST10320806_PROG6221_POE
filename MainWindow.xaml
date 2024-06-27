@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgPOE"
         mc:Ignorable="d"
-        Title="Recipe Manager" Height="500" Width="800" Background="Cornsilk">
+        Title="Recipe Manager" Height="500" Width="800" Background="Cornsilk"><!--Naming window as well as declaring its size-->
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -24,26 +24,23 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Recipe Name -->
+        <!-- Recipe Name Block and Box -->
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Enter Recipe Name:" Margin="0,0,0,5" FontSize="14" FontWeight="Bold"/>
         <TextBox Grid.Row="1" Grid.ColumnSpan="2" Name="RecipeNameTextBox" Margin="0,0,0,10" />
 
-        <!-- Save Recipe Name Button -->
-        <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Save Recipe Name" Click="SaveRecipeName_Click" Margin="0,0,0,15" Width="150" HorizontalAlignment="Left"/>
-
-        <!-- Ingredient Name -->
+        <!-- Ingredient Name Block and Box -->
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Ingredient Name:" VerticalAlignment="Center" />
         <TextBox Grid.Row="3" Grid.Column="1" Name="IngredientNameTextBox" Margin="0,0,0,10" />
 
-        <!-- Ingredient Quantity -->
+        <!-- Ingredient Quantity Block and Box -->
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Quantity:" VerticalAlignment="Center" />
         <TextBox Grid.Row="4" Grid.Column="1" Name="QuantityTextBox" Margin="0,0,0,10" />
 
-        <!-- Unit of Measurement -->
+        <!-- Unit of Measurement Block and Box -->
         <TextBlock Grid.Row="5" Grid.Column="0" Text="Unit of Measurement:" VerticalAlignment="Center" />
         <TextBox Grid.Row="5" Grid.Column="1" Name="UnitTextBox" Margin="0,0,0,10" />
 
-        <!-- Food Group -->
+        <!-- Food Group  Block and ComboBox -->
         <TextBlock Grid.Row="6" Grid.Column="0" Text="Food Group:" VerticalAlignment="Center" />
         <ComboBox Grid.Row="6" Grid.Column="1" Name="FoodGroupComboBox" Margin="0,0,0,10">
             <ComboBoxItem Content="Vegetables" />
@@ -54,14 +51,14 @@
             <ComboBoxItem Content="Fats" />
         </ComboBox>
 
-        <!-- Calories -->
+        <!-- Calories Block and Box -->
         <TextBlock Grid.Row="7" Grid.Column="0" Text="Calories:" VerticalAlignment="Center" />
         <TextBox Grid.Row="7" Grid.Column="1" Name="CaloriesTextBox" Margin="0,0,0,10" />
 
         <!-- Save Ingredient Button -->
         <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Content="Save Ingredient" Click="SaveIngredient_Click" Margin="0,10,0,10" Width="150" HorizontalAlignment="Left"/>
 
-        <!-- Add Steps Label -->
+        <!-- Add Steps Block -->
         <TextBlock Grid.Row="8" Grid.Column="0" Text="Add Steps:" VerticalAlignment="Top" Margin="10,114,380,0" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
         <!-- Recipe Steps TextBox -->
